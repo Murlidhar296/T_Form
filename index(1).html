@@ -1,0 +1,372 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRM Customer Data</title>
+        <!--<link rel="icon" src="5222.jpg" />-->
+            <link rel="icon" href="5222.jpg">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+            body {
+                font-family: 'Roboto', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(to right, #ff7e5f, #feb47b);
+                padding: 20px;
+                box-sizing: border-box;
+                overflow-y: auto;
+            }
+    
+            form {
+                background: #fff;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 800px;
+                box-sizing: border-box;
+            }
+    
+            fieldset {
+                margin-bottom: 30px;
+                border: 1px solid #eee;
+                border-radius: 10px;
+                padding: 20px;
+                position: relative;
+            }
+    
+            legend {
+                font-weight: bold;
+                padding: 0 10px;
+                color: #ff7e5f;
+            }
+    
+            label {
+                display: block;
+                margin-top: 20px;
+                color: #333;
+                font-weight: 500;
+            }
+    
+            input[type="text"],
+            input[type="tel"],
+            input[type="number"],
+            input[type="file"],
+            input[type="date"],
+            textarea,
+            select {
+                width: calc(100% - 20px);
+                padding: 12px;
+                margin-top: 8px;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                transition: all 0.3s ease;
+                box-sizing: border-box;
+            }
+    
+            input[type="text"]:focus,
+            input[type="tel"]:focus,
+            input[type="number"]:focus,
+            input[type="file"]:focus,
+            input[type="date"]:focus,
+            textarea:focus,
+            select:focus {
+                border-color: #ff7e5f;
+            }
+    
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+    
+            .radio-group {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+    
+            .radio-group label {
+                margin-top: 0;
+            }
+    
+            .flex-row {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 15px;
+            }
+    
+            input[type="submit"] {
+                background-color: #ff7e5f;
+                color: white;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 18px;
+                margin-top: 20px;
+                display: block;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+    
+            input[type="submit"]:hover {
+                background-color: #e65c4f;
+            }
+    
+            .center {
+                text-align: center;
+            }
+    
+            .header-img {
+                max-width: 120px;
+                border-radius: 50%;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+    
+            @media (max-width: 600px) {
+                form {
+                    padding: 20px;
+                }
+    
+                fieldset {
+                    padding: 15px;
+                }
+    
+                legend {
+                    padding: 0 5px;
+                }
+    
+                input[type="text"],
+                input[type="tel"],
+                input[type="number"],
+                input[type="file"],
+                input[type="date"],
+                textarea,
+                select {
+                    width: calc(100% - 16px);
+                    padding: 10px;
+                }
+    
+                input[type="submit"] {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                }
+    
+                .radio-group {
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: flex-start;
+                }
+    
+                .flex-row {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+    
+                .header-img {
+                    max-width: 80px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!--<form action="submit.php" method="post" enctype="multipart/form-data">-->
+        <form action="submit.php" method="post" enctype="multipart/form-data">
+            <div class="center">
+                <img src="5222.jpg" alt="Logo" class="header-img">
+            </div>
+            <h1 class="center">CRM Customer Data</h1>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Employee Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="employeeCode">Employee Code:</label>
+                <input type="text" id="employeeCode" name="employeeCode" required>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" name="customerName" required>
+                <label for="customerPhone">Customer Phone Number:</label>
+                <input type="tel" id="customerPhone" name="customerPhone" required>
+                <label for="customerWhatsApp">Customer WhatsApp Number:</label>
+                <input type="tel" id="customerWhatsApp" name="customerWhatsApp">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Location Details</legend>
+                <label for="village">Village Name:</label>
+                <input type="text" id="village" name="village" required>
+                <label for="taluka">Taluka Name:</label>
+                <input type="text" id="taluka" name="taluka" required>
+                <label for="district">District Name:</label>
+                <input type="text" id="district" name="district" required>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Vehicle Details</legend>
+                <label for="modelName">Model Name:</label>
+                <input type="text" id="modelName" name="modelName" required>
+                <label for="modelYear">Model Year:</label>
+                <input type="number" id="modelYear" name="modelYear" required>
+                <label for="chNumber">CH Number:</label>
+                <input type="text" id="chNumber" name="chNumber" required>
+                <label for="engineNumber">Engine Number:</label>
+                <input type="text" id="engineNumber" name="engineNumber" required>
+                
+                <label style="margin-bottom: 15px">Vehicle Inquiry:</label>
+                 <div class="radio-group pt-3">
+                    <label for="oldVehicleSell">Old Vehicle Sell:</label>
+                    <input type="radio" id="oldVehicleSellYes" name="oldVehicleSell" value="Yes" required>
+                    <label for="oldVehicleSellYes">Yes</label>
+                    <input type="radio" id="oldVehicleSellNo" name="oldVehicleSell" value="No" required>
+                    <label for="oldVehicleSellNo">No</label>
+                </div>
+                
+                &nbsp;
+                
+                <div class="radio-group pt-3">
+                    <label for="newVehiclePurchase">New Vehicle Purchase:</label>
+                    <input type="radio" id="newVehiclePurchaseYes" name="newVehiclePurchase" value="Yes" required>
+                    <label for="newVehiclePurchaseYes">Yes</label>
+                    <input type="radio" id="newVehiclePurchaseNo" name="newVehiclePurchase" value="No" required>
+                    <label for="newVehiclePurchaseNo">No</label>
+                </div>
+                
+                  <label for="equipmentRequirement" style="margin-bottom : 8px">Equipment Requirement:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="equipmentYes" name="equipmentRequirement" value="Yes" required>
+                        <label for="equipmentYes">Yes</label>
+                        <input type="radio" id="equipmentNo" name="equipmentRequirement" value="No" required>
+                        <label for="equipmentNo">No</label>
+                    </div>
+                
+                    <label for="accessoriesRequirement" style="margin-bottom : 8px">Accessories Requirement:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="accessoriesYes" name="accessoriesRequirement" value="Yes" required>
+                        <label for="accessoriesYes">Yes</label>
+                        <input type="radio" id="accessoriesNo" name="accessoriesRequirement" value="No" required>
+                        <label for="accessoriesNo">No</label>
+                    </div>
+            
+                <label for="vehicleInsurance" style="margin-bottom : 8px">Vehicle Insurance:</label>
+                <div class="radio-group pt-3">
+                    <input type="radio" id="insuranceYes" name="vehicleInsurance" value="Yes" required>
+                    <label for="insuranceYes">Yes</label>
+                    <input type="radio" id="insuranceNo" name="vehicleInsurance" value="No" required>
+                    <label for="insuranceNo">No</label>
+                </div>
+                
+                <label for="refinanceno">Refinance:</label>
+               <div class="radio-group pt-3">
+                <input type="radio" id="refinancenoYes" name="refinanceno" value="Yes" required>
+                <label for="refinancenoYes">Yes</label>
+                <input type="radio" id="refinancenoNo" name="refinanceno" value="No" required>
+                <label for="refinancenoNo">No</label>
+                </div>
+
+                
+                <label for="getOffer">Get Offer:</label>
+                <div class="radio-group">
+                    <input type="radio" id="getOfferYes" name="getOffer" value="Yes" required>
+                    <label for="getOfferYes">Yes</label>
+                    <input type="radio" id="getOfferNo" name="getOffer" value="No" required>
+                    <label for="getOfferNo">No</label>
+                </div>
+            
+                <label for="purchaseDealer">Purchase Dealer Name:</label>
+                <input type="text" id="purchaseDealer" name="purchaseDealer">
+                
+                <label for="purchaseDealer">Purchase Dealer Mobile Number:</label>
+                <input type="tel" id="purchaseDealermobilenumber" name="purchaseDealermobilenumber">
+            
+                <!--<label for="newPurchase">New Purchase:</label>-->
+                <!--<div class="radio-group">-->
+                <!--    <input type="radio" id="newPurchaseYes" name="newPurchase" value="Yes" required>-->
+                <!--    <label for="newPurchaseYes">Yes</label>-->
+                <!--    <input type="radio" id="newPurchaseNo" name="newPurchase" value="No" required>-->
+                <!--    <label for="newPurchaseNo">No</label>-->
+                <!--</div>-->
+                </fieldset>
+    
+    
+            <fieldset>
+                <legend>Payment Information</legend>
+                <label for="paymentMode">Payment Mode:</label>
+                <div class="radio-group">
+                    <input type="radio" id="cash" name="paymentMode" value="Cash">
+                    <label for="cash">Cash</label>
+                    <input type="radio" id="online" name="paymentMode" value="Online">
+                    <label for="online">Online</label>
+                    <input type="radio" id="none" name="paymentMode" value="None">
+                    <label for="none">None</label>
+                </div>
+                <label for="paymentProof">Payment Proof (Upload Photo):</label>
+           <input type="file" id="paymentProof" name="paymentProof[]" accept="image/*" multiple>
+
+
+            </fieldset>
+    
+            <fieldset>
+                <legend>Booklet Information</legend>
+                <div class="flex-row">
+                    <label for="bookletNumber">Booklet Number:</label>
+                    <input type="text" id="bookletNumber" name="bookletNumber">
+                </div>
+                <label for="reasonBookletNotTaken">Reason for Booklet Not Taken:</label>
+                <textarea id="reasonBookletNotTaken" name="reasonBookletNotTaken" rows="4" cols="50"></textarea>
+                <label for="nextVisitDate">Next Visit Date:</label>
+                <input type="date" id="nextVisitDate" name="nextVisitDate">
+                <div class="flex-row">
+                    <label for="remark">Remark:</label>
+                    <select id="remark" name="remark" required>
+                        <option value="Booklet Not Taken">Booklet Not Taken</option>
+                        <option value="Next Visit">Next Visit</option>
+                        <option value="Booked">Booklet Taken</option>
+                    </select>
+                </div>
+                <label for="complaint">Complaint (if any):</label>
+                <textarea id="complaint" name="complaint" rows="4" cols="50"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Other Customer Information</legend>
+                
+                <label for="newCustomerName">Name:</label>
+                <input type="text" id="newCustomerName" name="newCustomerName" required>
+                
+                <label for="newCustomerPhone">Mobile Number:</label>
+                <input type="tel" id="newCustomerPhone" name="newCustomerPhone" required>
+                
+                <label for="newCustomerVillage">Village:</label>
+                <input type="text" id="newCustomerVillage" name="newCustomerVillage" required>
+                
+                <label for="newCustomerDistrict">District:</label>
+                <input type="text" id="newCustomerDistrict" name="newCustomerDistrict" required>
+                
+                <label for="newCustomerTaluka">Taluka:</label>
+                <input type="text" id="newCustomerTaluka" name="newCustomerTaluka" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Other Vehicle Details</legend>
+                <label for="vehicleName">Current Vehicle Name:</label>
+                <input type="text" id="vehicleName" name="vehicleName" required>
+                <label for="modelNumber">Current Model Number:</label>
+                <input type="text" id="modelNumber" name="modelNumber" required>
+            </fieldset>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+    
+    </html>
